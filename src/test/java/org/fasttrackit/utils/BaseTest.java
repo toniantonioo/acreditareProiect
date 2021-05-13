@@ -1,4 +1,4 @@
-package org.fasttrackit.features;
+package org.fasttrackit.utils;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;

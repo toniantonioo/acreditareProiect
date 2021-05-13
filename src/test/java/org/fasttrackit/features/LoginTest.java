@@ -1,13 +1,12 @@
 package org.fasttrackit.features;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.LoginSteps;
+import org.fasttrackit.utils.BaseTest;
 import org.fasttrackit.utils.Constants;
 import org.junit.Test;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
     @Steps
     private LoginSteps loginSteps;
