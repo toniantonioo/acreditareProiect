@@ -1,7 +1,7 @@
 package org.fasttrackit.utils;
 
 public class Constants {
-    public static final String USER_EMAIL = "cosmin@fasttrackit.org";
-    public static final String USER_PASSWORD = "123456";
+    public static final String USER_EMAIL = "fin_toni@yahoo.com";
+    public static final String USER_PASSWORD = "Antoniotoni123";
 
 }

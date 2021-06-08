@@ -5,22 +5,14 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008/")
 public class HomePage extends PageObject {
 
-    @FindBy(css = ".skip-account .label")
-    private WebElementFacade accountLink;
+    @FindBy(css = "[title='Login']")
+    private WebElementFacade singInRegisterLink;
 
-    @FindBy(css = "[title='Log In']")
-    private WebElementFacade logInLink;
-
-    public void clickAccountLink(){
-        clickOn(accountLink);
+    public void clickSingInRegisterLink(){
+        clickOn(singInRegisterLink);
     }
-
-    public void clickLogInLink(){
-        clickOn(logInLink);
-    }
-
 
 }
