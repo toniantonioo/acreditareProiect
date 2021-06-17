@@ -8,17 +8,20 @@ public class MyAcconutResetPasswordPage extends PageObject {
 
     @FindBy(id = "user_login")
     private WebElementFacade userEmailField;
-    public void addEmailToResetPass(String email){
+    @FindBy(css = ".woocommerce-Button")
+    private WebElementFacade resetPaswordButton;
+    @FindBy(css = "[role='alert']")
+    private WebElementFacade resetPasswordEmailSent;
+
+    public void addEmailToResetPass(String email) {
         typeInto(userEmailField, email);
     }
-    @FindBy(css =".woocommerce-Button" )
-    private WebElementFacade resetPaswordButton;
-    public void clickResetPasswordButton(){
+
+    public void clickResetPasswordButton() {
         clickOn(resetPaswordButton);
     }
-    @FindBy(css ="[role='alert']")
-    private WebElementFacade resetPasswordEmailSent;
-    public void checkResetEmailIfSent(String message){
+
+    public void checkResetEmailIfSent(String message) {
         resetPasswordEmailSent.shouldContainOnlyText(message);
     }
 }

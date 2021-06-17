@@ -8,6 +8,7 @@ import org.fasttrackit.pages.MyAcconutResetPasswordPage;
 import org.fasttrackit.utils.Constants;
 
 public class LoginSteps {
+
     private HomePage homePage;
     private MyAcconutPage myAcconutPage;
     private DashboardPage dashboardPage;
@@ -61,4 +62,13 @@ public class LoginSteps {
     public void checkIfEmailWassSent(String message){
       myAcconutResetPasswordPage.checkResetEmailIfSent(message);
     }
+    @Step
+    public void logInOneStep(){
+        homePage.open();
+        homePage.clickSingInRegisterLink();
+        myAcconutPage.setUsernameField(Constants.USER_EMAIL);
+        myAcconutPage.setPasswordFieldLogin(Constants.USER_PASSWORD);
+        myAcconutPage.clickLogInButton();
+    }
+
 }
