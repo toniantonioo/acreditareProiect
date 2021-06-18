@@ -17,6 +17,7 @@ public class CartTest extends BaseTest {
         loginSteps.logInOneStep();
         cartSteps.clickCArtButton();
         cartSteps.empyCart();
+        cartSteps.checkCartEmpty();
 
     }
 
@@ -28,6 +29,7 @@ public class CartTest extends BaseTest {
         cartSteps.clickAddProductToCart();
         cartSteps.clickCArtButton();
         cartSteps.checkIfItemIsInCart("testItem");
+        cartSteps.removeItemFromCart();
 
     }
 

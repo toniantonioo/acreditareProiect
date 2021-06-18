@@ -61,4 +61,12 @@ public class CartSteps {
         cartPage.removeMessageCheck(text);
     }
 
+    @Step
+    public void removeItemFromCart(){
+        cartPage.removeItemFromCart();
+    }
+    @Step
+    public void checkCartEmpty(){
+        cartPage.emptyCartMessage();
+    }
 }

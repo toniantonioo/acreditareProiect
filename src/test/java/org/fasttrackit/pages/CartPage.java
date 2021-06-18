@@ -7,6 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import java.util.List;
 
 public class CartPage extends PageObject {
+
     @FindBy(css = "[data-title='Product']")
     private WebElementFacade productsFromCartName;
 
@@ -21,12 +22,17 @@ public class CartPage extends PageObject {
 
     @FindBy(css = "[role='alert']")
     private WebElementFacade itemRemovedMessage;
-
     @FindBy(css = ".checkout-button")
     private WebElementFacade checkoutButton;
-
     @FindBy(css = ".product-remove > .remove")
     private WebElementFacade xButtons;
+    @FindBy(css = ".woocommerce .cart_item [step]")
+    private List<WebElementFacade> quantityThings;
+
+    @FindBy(css = "button[name='update_cart']")
+    private WebElementFacade updateCartButton;
+    @FindBy(css = ".cart-empty")
+    private WebElementFacade cartEmptyText;
 
     public CartPage() {
     }
@@ -35,9 +41,6 @@ public class CartPage extends PageObject {
         productsFromCartName.shouldContainOnlyText(itemName);
     }
 
-    public void RemoveItemFromCart() {
-        clickOn(removeItemFromCartLink);
-    }
 
     public void findItemInListAndDelete(String name) {
 
@@ -55,12 +58,33 @@ public class CartPage extends PageObject {
     }
 
     public void emptyCartList() {
-        while(!xButtons.isDisplayed()){
-            xButtons.click();
+        if (cartEmptyText.isDisplayed()) {
+            System.out.println("cart is empty");
+
         }
+
+        for (WebElementFacade quantityThing : quantityThings) {
+            typeInto(quantityThing, "0");
+        }
+
+        clickOn(updateCartButton);
+
     }
+
 
     public void clickCheckoutButton() {
         clickOn(checkoutButton);
     }
+
+    public void removeItemFromCart() {
+        clickOn(removeItemFromCartLink);
+    }
+
+    public void emptyCartMessage() {
+        cartEmptyText.shouldContainOnlyText("Your cart is currently empty.");
+    }
 }
+//  while (xButtons.isDisplayed()) {
+//          xButtons.click();
+//
+//          }
