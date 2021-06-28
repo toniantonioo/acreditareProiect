@@ -17,7 +17,7 @@ public class RegisterTest extends BaseTest {
         registerSteps.checkNewAcconutInfo();
     }
 
-public void createAccountFromAdnim(){
+public void createAccountFromAdmin(){
 
 
 }

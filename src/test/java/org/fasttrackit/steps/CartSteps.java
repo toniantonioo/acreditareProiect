@@ -62,11 +62,12 @@ public class CartSteps {
     }
 
     @Step
-    public void removeItemFromCart(){
+    public void removeItemFromCart() {
         cartPage.removeItemFromCart();
     }
+
     @Step
-    public void checkCartEmpty(){
+    public void checkCartEmpty() {
         cartPage.emptyCartMessage();
     }
 }

@@ -3,6 +3,7 @@ package org.fasttrackit.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.junit.Assert;
 
 import java.util.List;
 
@@ -58,18 +59,13 @@ public class CartPage extends PageObject {
     }
 
     public void emptyCartList() {
-        if (cartEmptyText.isDisplayed()) {
-            System.out.println("cart is empty");
 
-        }
-
-        for (WebElementFacade quantityThing : quantityThings) {
-            typeInto(quantityThing, "0");
-        }
-
+            for (WebElementFacade quantityThing : quantityThings) {
+                typeInto(quantityThing, "0");
+            }
         clickOn(updateCartButton);
-
     }
+
 
 
     public void clickCheckoutButton() {
@@ -84,7 +80,3 @@ public class CartPage extends PageObject {
         cartEmptyText.shouldContainOnlyText("Your cart is currently empty.");
     }
 }
-//  while (xButtons.isDisplayed()) {
-//          xButtons.click();
-//
-//          }

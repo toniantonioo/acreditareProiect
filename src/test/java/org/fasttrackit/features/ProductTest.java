@@ -15,7 +15,8 @@ public class ProductTest extends BaseTest {
     private ProductSteps produceSteps;
     @Steps
     private CartSteps cartSteps;
-@Test
+
+    @Test
     public void addMultipleItemsInCart() {
 
         loginSteps.logInOneStep();
@@ -26,6 +27,17 @@ public class ProductTest extends BaseTest {
         produceSteps.clickAddToCartButton();
         produceSteps.verificationMessageCheck("4 × “testItem” have been added to your cart.");
 
+    }
+
+    @Test
+    public void addingProductCollectionInCart() {
+        loginSteps.logInOneStep();
+        cartSteps.clickShopLink();
+        cartSteps.selectFromDropDown("rating");
+        produceSteps.clickLogoCollectionDetailsButton();
+        produceSteps.addQuantityToProducts("1","1","1");
+        produceSteps.clickAddToCartLogoCollection();
+        produceSteps.checkProductsAreAdded("“Hoodie with Logo”, “T-Shirt” and “Beanie” have been added to your cart.");
     }
 
 

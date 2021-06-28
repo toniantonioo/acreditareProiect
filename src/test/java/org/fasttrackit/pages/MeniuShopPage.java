@@ -1,4 +1,5 @@
 package org.fasttrackit.pages;
+
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
@@ -18,6 +19,8 @@ public class MeniuShopPage extends PageObject {
     private WebElementFacade tShirtProduct;
     @FindBy(css = ".first.instock.post-3370")
     private WebElementFacade testItemlink;
+    @FindBy(css = ".button.product_type_grouped")
+    private WebElementFacade logoCollectionButton;
 
     public void setSortByDropdown(String value) {
         sortByDropdown.selectByValue(value);
@@ -45,8 +48,13 @@ public class MeniuShopPage extends PageObject {
 
     }
 
-public void clickTestItemLink(){
+    public void clickTestItemLink() {
         clickOn(testItemlink);
-}
+    }
+
+    public void clickLogoCollectionButton() {
+        clickOn(logoCollectionButton);
+    }
+
 }
 
